@@ -3,7 +3,7 @@
 DIRTOOLS=$PWD
 DIRIN=$DIRTOOLS/input
 DIROUT=$DIRTOOLS/output
-OPLUSMERGE=$DIRTOOLS/py
+MERGE=$DIRTOOLS/py
 clear
 
 if [ -d $DIRIN ]; 
@@ -18,11 +18,11 @@ then
 	gawk -i inplace 'NR>1' $DIRIN/system_ext_file_contexts
 	gawk -i inplace 'NR>1' $DIRIN/product_file_contexts
 
-	python3 $OPLUSMERGE/system_ext.py $DIRIN/system_ext_file_contexts
-	python3 $OPLUSMERGE/system_ext.py $DIRIN/system_ext_fs_config
+	python3 $MERGE/system_ext.py $DIRIN/system_ext_file_contexts
+	python3 $MERGE/system_ext.py $DIRIN/system_ext_fs_config
 
-	python3 $OPLUSMERGE/product.py $DIRIN/product_file_contexts
-	python3 $OPLUSMERGE/product.py $DIRIN/product_fs_config
+	python3 $MERGE/product.py $DIRIN/product_file_contexts
+	python3 $MERGE/product.py $DIRIN/product_fs_config
 
 
 	cat $DIRIN/system_ext_file_contexts >> $DIRIN/system_file_contexts
