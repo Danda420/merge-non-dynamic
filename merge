@@ -29,7 +29,7 @@ then
 	cat $DIRIN/system_ext_fs_config >> $DIRIN/system_fs_config
 
 	cat $DIRIN/product_file_contexts >> $DIRIN/system_file_contexts
-	cat $DIRIN/product_fs_config >> c
+	cat $DIRIN/product_fs_config >> $DIRIN/system_fs_config
 
 
 	rm -rf $DIRIN/product*
