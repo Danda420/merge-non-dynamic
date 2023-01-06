@@ -13,8 +13,7 @@ else
     mkdir $DIRIN $DIROUT
 fi
 
-if [ -f $DIRIN/system_file_contexts ]; 
-then
+if [[ -f $DIRIN/system_file_contexts ]] && [[ -f $DIRIN/system_fs_config ]] && [[ -f $DIRIN/system_ext_file_contexts ]] && [[ -f $DIRIN/system_ext_fs_config ]] && [[ -f $DIRIN/product_file_contexts ]] && [[ -f $DIRIN/product_fs_config ]]; then
 	gawk -i inplace 'NR>1' $DIRIN/system_ext_file_contexts
 	gawk -i inplace 'NR>1' $DIRIN/product_file_contexts
 
